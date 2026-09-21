@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64", "pybind11>=2.10"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chaai"
+description = "chaai: fast amino-acid identity between genomes by seed-chain-align"
+readme = "README.md"
+requires-python = ">=3.10"
+dynamic = ["version"]
+license = {text = "GPL-3.0-only"}
+authors = [
+    {name = "Muhammad Sulman", email = "sulmanmu40@gmail.com"}
+]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: C++",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pyrodigal = ["pyrodigal>=3.0"]
+
+[project.scripts]
+chaai = "chaai.main:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "chaai._version.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["chaai", "chaai.*"]

@@ -1,0 +1,3 @@
+graft src
+prune build
+global-exclude __pycache__ *.py[cod] *.so
