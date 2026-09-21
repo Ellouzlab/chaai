@@ -29,5 +29,9 @@ chaai = "chaai.main:main"
 [tool.setuptools.dynamic]
 version = {attr = "chaai._version.__version__"}
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
 [tool.setuptools.packages.find]
+where = ["src"]
 include = ["chaai", "chaai.*"]
